@@ -1,21 +1,33 @@
 Public Class frmSearch
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
-    End Sub
-
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub btnEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEdit.Click
+        Dim strTable As String
         Me.Hide()
         Select Case cboType.SelectedItem
             Case "User"
-                frmEditUser.Show()
+                strTable = "UserTable"
             Case "Seat"
-                frmEditSeat.Show()
+                strTable = "SeatTable"
             Case "Flight"
-                frmEditFlight.Show()
+                strTable = "FlightTable"
             Case Else
                 MessageBox.Show("Please specify what to search for")
         End Select
+
+    End Sub
+
+    Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Hide()
+        frmHome.Show()
+    End Sub
+
+
+    Private Sub btnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAdd.Click
+
+    End Sub
+
+    Private Sub cboType_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboType.SelectedIndexChanged
 
     End Sub
 End Class
